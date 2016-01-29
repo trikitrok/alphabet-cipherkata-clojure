@@ -29,7 +29,7 @@
        (range 1 (inc (count enlarged-keyword)))))
 
 (defn- find-first [pred coll]
-  (first (drop-while (complement pred) coll)))
+  (some #(when (pred %) %) coll))
 
 (defn- find-minimum-keyword [encoded-msg msg possible-keywords]
   (find-first #(= (encode % msg) encoded-msg) possible-keywords))
