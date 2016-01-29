@@ -22,12 +22,14 @@
     (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv") => "meetmeontuesdayeveningatseven"
 
     (decode "scones" "egsgqwtahuiljgs") => "meetmebythetree")
-  ;
-  ;(fact
-  ;  "can extract the secret keyword given an encrypted message and the original message"
+
+  (fact
+    "can extract the secret keyword given an encrypted message and the original message"
+
+    (decipher "o" "t") => "v"
   ;
   ;  (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
   ;
-  ;  (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones")
-  ;
+  ;  (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones"
+   )
   )
