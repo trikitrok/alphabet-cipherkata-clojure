@@ -29,4 +29,4 @@
   (apply str (map decode-char (cycle keyword) encoded-msg)))
 
 (defn decipher [encoded-msg msg]
-  (str (decipher-char (first encoded-msg) (first msg))))
+  (apply str (map decipher-char encoded-msg msg)))

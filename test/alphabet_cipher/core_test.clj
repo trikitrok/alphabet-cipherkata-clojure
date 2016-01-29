@@ -27,6 +27,8 @@
     "can extract the secret keyword given an encrypted message and the original message"
 
     (decipher "o" "t") => "v"
+
+    (decipher "opkyf" "thequ") => "vigil"
   ;
   ;  (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
   ;
