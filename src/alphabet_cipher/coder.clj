@@ -11,17 +11,17 @@
 (defn- rotate-alphabet-to-start-with [c]
   (rotate-str alphabet (.indexOf alphabet c)))
 
-(defn- encode-char [keyword-char msg-char]
-  (nth (rotate-alphabet-to-start-with keyword-char)
-       (.indexOf alphabet msg-char)))
+(defn- encode-char [keyword-c msg-c]
+  (nth (rotate-alphabet-to-start-with keyword-c)
+       (.indexOf alphabet msg-c)))
 
-(defn- decode-char [keyword-char msg-char]
+(defn- decode-char [keyword-c c]
   (nth alphabet
-       (.indexOf (rotate-alphabet-to-start-with keyword-char) msg-char)))
+       (.indexOf (rotate-alphabet-to-start-with keyword-c) c)))
 
-(defn- decipher-char [encoded-msg-char msg-char]
+(defn- decipher-char [encoded-c msg-c]
   (nth alphabet
-       (.indexOf (rotate-alphabet-to-start-with msg-char) encoded-msg-char)))
+       (.indexOf (rotate-alphabet-to-start-with msg-c) encoded-c)))
 
 (defn- possible-keywords [enlarged-keyword]
   (map #(take % enlarged-keyword)
