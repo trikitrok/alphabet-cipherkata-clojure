@@ -22,8 +22,7 @@
   (apply str (map encode-char (cycle keyword) msg)))
 
 (defn decode [keyword encoded-msg]
-  (str
-    (decode-char (first keyword) (first encoded-msg))))
+  (apply str (map decode-char (cycle keyword) encoded-msg)))
 
 (defn decipher [encoded-msg msg]
   )

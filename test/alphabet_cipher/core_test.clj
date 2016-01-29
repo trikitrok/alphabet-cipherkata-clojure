@@ -12,18 +12,16 @@
 
     (encode "vigilance" "meetmeontuesdayeveningatseven") => "hmkbxebpxpmyllyrxiiqtoltfgzzv"
 
-    (encode "scones" "meetmebythetree") => "egsgqwtahuiljgs"
-    )
+    (encode "scones" "meetmebythetree") => "egsgqwtahuiljgs")
 
   (fact
-    "can decode an cyrpted message given a secret keyword"
+    "can decode an encrypted message given a secret keyword"
 
     (decode "v" "h") => "m"
 
-  ;  (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv") => "meetmeontuesdayeveningatseven"
-  ;
-  ;  (decode "scones" "egsgqwtahuiljgs") => "meetmebythetree"
-  )
+    (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv") => "meetmeontuesdayeveningatseven"
+
+    (decode "scones" "egsgqwtahuiljgs") => "meetmebythetree")
   ;
   ;(fact
   ;  "can extract the secret keyword given an encrypted message and the original message"
