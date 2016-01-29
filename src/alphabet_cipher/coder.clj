@@ -22,6 +22,13 @@
   (nth alphabet
        (.indexOf (rotate-alphabet-to-start-with msg-char) encoded-msg-char)))
 
+(defn- possible-keywords [enlarged-keyword]
+  (map #(take % enlarged-keyword)
+       (range 1 (inc (count enlarged-keyword)))))
+
+(defn- find-first [pred coll]
+  (first (drop-while (complement pred) coll)))
+
 (defn encode [keyword msg]
   (apply str (map encode-char (cycle keyword) msg)))
 
@@ -30,10 +37,5 @@
 
 (defn decipher [encoded-msg msg]
   (let [enlarged-keyword (apply str (map decipher-char encoded-msg msg))]
-    (apply str
-           (first
-             (drop-while
-               #(not= (encode % msg)
-                      encoded-msg)
-               (map #(take % enlarged-keyword)
-                    (range 1 (inc (count enlarged-keyword)))))))))
+    (apply str (find-first #(= (encode % msg) encoded-msg)
+                           (possible-keywords enlarged-keyword)))))
