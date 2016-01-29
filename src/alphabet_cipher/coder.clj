@@ -17,8 +17,7 @@
 
 (defn- decode-char [keyword-char msg-char]
   (nth alphabet
-       (.indexOf (rotate-alphabet-to-start-with keyword-char)
-                 msg-char)))
+       (.indexOf (rotate-alphabet-to-start-with keyword-char) msg-char)))
 
 (defn- decipher-char [encoded-msg-char msg-char]
   (nth alphabet

@@ -1,6 +1,7 @@
 (ns alphabet-cipher.core-test
-  (:require [midje.sweet :refer :all]
-            [alphabet-cipher.coder :refer :all]))
+  (:require
+    [midje.sweet :refer :all]
+    [alphabet-cipher.coder :refer :all]))
 
 (facts
   "about Alphabet cipher"
@@ -32,6 +33,4 @@
 
     (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
 
-    (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones"
-   )
-  )
+    (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones"))
