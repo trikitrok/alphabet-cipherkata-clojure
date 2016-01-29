@@ -1,5 +1,7 @@
 (ns alphabet-cipher.coder)
 
+(declare encode)
+
 (def ^:private alphabet
   (map char (range (int \a) (inc (int \z)))))
 
@@ -29,6 +31,12 @@
 (defn- find-first [pred coll]
   (first (drop-while (complement pred) coll)))
 
+(defn- find-minimum-keyword [encoded-msg msg possible-keywords]
+  (find-first #(= (encode % msg) encoded-msg) possible-keywords))
+
+(defn- decipher-enlarged-keyword [encoded-msg msg]
+  (apply str (map decipher-char encoded-msg msg)))
+
 (defn encode [keyword msg]
   (apply str (map encode-char (cycle keyword) msg)))
 
@@ -36,8 +44,7 @@
   (apply str (map decode-char (cycle keyword) encoded-msg)))
 
 (defn decipher [encoded-msg msg]
-  (let [enlarged-keyword (apply str (map decipher-char encoded-msg msg))]
-    (->> enlarged-keyword
-         possible-keywords
-         (find-first #(= (encode % msg) encoded-msg))
-         (apply str))))
+  (->> (decipher-enlarged-keyword encoded-msg msg)
+       possible-keywords
+       (find-minimum-keyword encoded-msg msg)
+       (apply str)))
