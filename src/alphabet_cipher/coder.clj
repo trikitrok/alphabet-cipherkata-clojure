@@ -6,8 +6,11 @@
 (defn rotate-str [str n]
   (take (count str) (drop n (cycle str))))
 
+(defn- rotate-alphabet-to-start-with [c]
+  (rotate-str alphabet (.indexOf alphabet c)))
+
 (defn- encode-char [keyword-char msg-char]
-  (nth (rotate-str alphabet (.indexOf alphabet keyword-char))
+  (nth (rotate-alphabet-to-start-with keyword-char)
        (.indexOf alphabet msg-char)))
 
 (defn encode [keyword msg]
