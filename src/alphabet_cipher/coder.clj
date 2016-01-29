@@ -37,5 +37,7 @@
 
 (defn decipher [encoded-msg msg]
   (let [enlarged-keyword (apply str (map decipher-char encoded-msg msg))]
-    (apply str (find-first #(= (encode % msg) encoded-msg)
-                           (possible-keywords enlarged-keyword)))))
+    (->> enlarged-keyword
+         possible-keywords
+         (find-first #(= (encode % msg) encoded-msg))
+         (apply str))))
