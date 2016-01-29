@@ -31,9 +31,6 @@
 (defn- find-first [pred coll]
   (some #(when (pred %) %) coll))
 
-(defn- find-minimum-keyword [encoded-msg msg possible-keywords]
-  (find-first #(= (encode % msg) encoded-msg) possible-keywords))
-
 (defn- decipher-enlarged-keyword [encoded-msg msg]
   (apply str (map decipher-char encoded-msg msg)))
 
@@ -46,5 +43,5 @@
 (defn decipher [encoded-msg msg]
   (->> (decipher-enlarged-keyword encoded-msg msg)
        possible-keywords
-       (find-minimum-keyword encoded-msg msg)
+       (find-first #(= (encode % msg) encoded-msg))
        (apply str)))
