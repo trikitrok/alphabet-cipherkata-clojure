@@ -18,6 +18,10 @@
        (.indexOf (rotate-alphabet-to-start-with keyword-char)
                  msg-char)))
 
+(defn- decipher-char [encoded-msg-char msg-char]
+  (nth alphabet
+       (.indexOf (rotate-alphabet-to-start-with msg-char) encoded-msg-char)))
+
 (defn encode [keyword msg]
   (apply str (map encode-char (cycle keyword) msg)))
 
@@ -25,4 +29,4 @@
   (apply str (map decode-char (cycle keyword) encoded-msg)))
 
 (defn decipher [encoded-msg msg]
-  (str (nth alphabet (.indexOf (rotate-alphabet-to-start-with (first msg)) (first encoded-msg)))))
+  (str (decipher-char (first encoded-msg) (first msg))))
