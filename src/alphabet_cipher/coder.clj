@@ -14,7 +14,7 @@
        (.indexOf alphabet msg-char)))
 
 (defn encode [keyword msg]
-  (str (encode-char (first keyword) (first msg))))
+  (apply str (map encode-char (cycle keyword) msg)))
 
 (defn decode [keyword encoded-msg]
   )

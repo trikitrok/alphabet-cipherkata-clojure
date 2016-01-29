@@ -10,9 +10,9 @@
 
     (encode "v" "m") => "h"
 
-    ;(encode "vigilance" "meetmeontuesdayeveningatseven") => "hmkbxebpxpmyllyrxiiqtoltfgzzv"
-    ;
-    ;(encode "scones" "meetmebythetree") => "egsgqwtahuiljgs"
+    (encode "vigilance" "meetmeontuesdayeveningatseven") => "hmkbxebpxpmyllyrxiiqtoltfgzzv"
+
+    (encode "scones" "meetmebythetree") => "egsgqwtahuiljgs"
     )
 
   ;(fact
