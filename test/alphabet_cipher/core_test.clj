@@ -8,20 +8,25 @@
   (fact
     "can encode given a secret keyword"
 
-    (encode "vigilance" "meetmeontuesdayeveningatseven") => "hmkbxebpxpmyllyrxiiqtoltfgzzv"
+    (encode "v" "m") => "h"
 
-    (encode "scones" "meetmebythetree") => "egsgqwtahuiljgs")
+    ;(encode "vigilance" "meetmeontuesdayeveningatseven") => "hmkbxebpxpmyllyrxiiqtoltfgzzv"
+    ;
+    ;(encode "scones" "meetmebythetree") => "egsgqwtahuiljgs"
+    )
 
-  (fact
-    "can decode an cyrpted message given a secret keyword"
-
-    (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv") => "meetmeontuesdayeveningatseven"
-
-    (decode "scones" "egsgqwtahuiljgs") => "meetmebythetree")
-
-  (fact
-    "can extract the secret keyword given an encrypted message and the original message"
-
-    (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
-
-    (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones"))
+  ;(fact
+  ;  "can decode an cyrpted message given a secret keyword"
+  ;
+  ;  (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv") => "meetmeontuesdayeveningatseven"
+  ;
+  ;  (decode "scones" "egsgqwtahuiljgs") => "meetmebythetree")
+  ;
+  ;(fact
+  ;  "can extract the secret keyword given an encrypted message and the original message"
+  ;
+  ;  (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
+  ;
+  ;  (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones")
+  ;
+  )
