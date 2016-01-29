@@ -29,9 +29,9 @@
     (decipher "o" "t") => "v"
 
     (decipher "opkyf" "thequ") => "vigil"
-  ;
-  ;  (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
-  ;
-  ;  (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones"
+
+    (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog") => "vigilance"
+
+    (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs") => "scones"
    )
   )

@@ -29,4 +29,11 @@
   (apply str (map decode-char (cycle keyword) encoded-msg)))
 
 (defn decipher [encoded-msg msg]
-  (apply str (map decipher-char encoded-msg msg)))
+  (let [enlarged-keyword (apply str (map decipher-char encoded-msg msg))]
+    (apply str
+           (first
+             (drop-while
+               #(not= (encode % msg)
+                      encoded-msg)
+               (map #(take % enlarged-keyword)
+                    (range 1 (inc (count enlarged-keyword)))))))))
