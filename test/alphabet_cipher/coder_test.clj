@@ -1,4 +1,4 @@
-(ns alphabet-cipher.core-test
+(ns alphabet-cipher.coder-test
   (:require
     [midje.sweet :refer :all]
     [alphabet-cipher.coder :refer :all]))
