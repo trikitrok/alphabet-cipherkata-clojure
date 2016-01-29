@@ -3,11 +3,15 @@
 (def ^:private alphabet
   (map char (range (int \a) (inc (int \z)))))
 
+(defn rotate-str [str n]
+  (take (count str) (drop n (cycle str))))
+
+(defn- encode-char [keyword-char msg-char]
+  (nth (rotate-str alphabet (.indexOf alphabet keyword-char))
+       (.indexOf alphabet msg-char)))
+
 (defn encode [keyword msg]
-  (str
-    (nth (take (count alphabet)
-             (drop (.indexOf alphabet (first keyword)) (cycle alphabet)))
-       (.indexOf alphabet (first msg)))))
+  (str (encode-char (first keyword) (first msg))))
 
 (defn decode [keyword encoded-msg]
   )
